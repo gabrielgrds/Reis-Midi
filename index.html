@@ -14,6 +14,7 @@
     <link rel="icon" type="image/png" href="IMG/bateria.png">
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/reset.css">
+
 </head>
 
 <body>
@@ -21,10 +22,10 @@
     <h1 class="titulo1">Reis Midi</h1>
 
     <section class="teclado">
-        <button onclick="alert('Não tem nada')" class="tecla tecla_nada">Nada</button>
+        <button class="tecla tecla_nada">Nada</button>
         <button class="tecla tecla_secret">Secret</button>
         <button class="tecla tecla_tim">Tim</button>
-
+        
         <button class="tecla tecla_puff">Puff</button>
         <button class="tecla tecla_splash">Splash</button>
         <button class="tecla tecla_toim">Toim</button>
@@ -44,5 +45,9 @@
     <audio src="SOUNDS/keyx.wav" id="som_tecla_tic"></audio >
     <audio src="SOUNDS/keyc.wav" id="som_tecla_tom"></audio>
 
+
+    <script src="main.js"></script> <!--se meu arquivo depende do body do html, preciso colocar ele dps do body e não lá no head onde importo todos os outros links-->
 </body>
 </html>
+
+<!--fazer um piano com todas as teclas e som (usar teclas para tocar o piano e mouse tbm)-->
