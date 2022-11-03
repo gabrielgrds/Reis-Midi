@@ -55,7 +55,7 @@ body {
     box-shadow: 3px 3px 0 var(--vermelha-escura) inset;
     color: var(--branca);
     outline: none;
-    transition: 200ms;
+    transition: 250ms;
 }
   
 .tecla.focus,
