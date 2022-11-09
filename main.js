@@ -4,20 +4,25 @@ function tocaSom (idElementoAudio) {
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
-let contador = 0;
+for (let contador = 0; contador < listaDeTeclas.length; contador ++) {
 
-while (contador < listaDeTeclas.length) {
-    
     const tecla = listaDeTeclas[contador];
     const instrumento = tecla.classList[1]; //o classList é para buscar a segunda parte da classe (tecla tecla_nada). Se fosse 0 buscaria tecla e 1 busca tecla_nada
-    
-    const idAudio = `#som_${instrumento}` //template string
+    const idAudio = `#som_${instrumento}`; //template string
 
     tecla.onclick = function () { //aqui é feito uma função anonima para poder declarar mais coisas, pois se eu colocasse o tocaSom() o navegador já iria executar a função antes mesmo de qualquer interassão com a página
         tocaSom (idAudio);
     }
 
-    contador += 1;
+    tecla.onkeydown = function(evento) {
+
+        if (evento.code === 'Space' || evento.code ==='Enter') // só um = atribui algo exemplo x = evento, então evento é x... para comparar tem que usar o == ou seja, quando o evento for o espaço, fazer algo
+            tecla.classList.add ('ativa'); // || significa "or"
+    }
+
+    tecla.onkeyup = function() {
+        tecla.classList.remove ('ativa');
+    }
 
     //console.log(idAudio);
 }
